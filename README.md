@@ -15,3 +15,4 @@ Simple projeCt for  LED blinking.
 -  freeRTOS
 -  espressive extension for VSCode
 
+<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/948954c3-ba4a-4626-be9c-c35995813a61" />
