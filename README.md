@@ -20,6 +20,10 @@ Simple projeCt for  LED blinking.
 <img width="1400" height="1000" alt="image" src="https://github.com/user-attachments/assets/90bb107b-9993-4c43-bd34-e7ed80c454ef" />
 
 
+
 idf.py build
+
 idf.py -p COM3 flash
+
 idf.py -p COM3 monitor
+
