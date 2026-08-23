@@ -40,23 +40,66 @@ void app_main(void)
 
     while (1)
     {
-        for (int i = 0; i < LED_COUNT; i++)
+        for (int count = 1; count <= LED_COUNT; count++)
         {
-            // sve ugasi
-            for (int j = 0; j < LED_COUNT; j++)
+            for (int i = 0; i < LED_COUNT; i++)
             {
-                gpio_set_level(led_pins[j], 0);
+                if (i < count)
+                {
+                    gpio_set_level(led_pins[i], 1);
+                }
+                else
+                {
+                    gpio_set_level(led_pins[i], 0);
+                }
             }
 
-            // upali samo jednu
-            gpio_set_level(led_pins[i], 1);
+            ESP_LOGI(TAG, "LED BAR LEVEL = %d/%d", count, LED_COUNT);
 
-            ESP_LOGI(TAG, "TEST INDEX = %d, GPIO = %d",
-                    i, led_pins[i]);
-
-            vTaskDelay(pdMS_TO_TICKS(2000));
+            vTaskDelay(pdMS_TO_TICKS(500));
         }
+
+        for (int i = 0; i < LED_COUNT; i++)
+        {
+            gpio_set_level(led_pins[i], 0);
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(1000));
     }
 
-    
 }
+
+/*OVO ISPOD POSTAVLJA LED-ice DA IZGLEDAJU KAO DA SE PUNI BATERIJA*/
+
+/*
+    while (1)
+{
+    for (int count = 1; count <= LED_COUNT; count++)
+    {
+        for (int i = 0; i < LED_COUNT; i++)
+        {
+            if (i < count)
+            {
+                gpio_set_level(led_pins[i], 1);
+            }
+            else
+            {
+                gpio_set_level(led_pins[i], 0);
+            }
+        }
+
+        ESP_LOGI(TAG, "LED BAR LEVEL = %d/%d", count, LED_COUNT);
+
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
+
+    for (int i = 0; i < LED_COUNT; i++)
+    {
+        gpio_set_level(led_pins[i], 0);
+    }
+
+    vTaskDelay(pdMS_TO_TICKS(1000));
+}
+*/
+
+    
