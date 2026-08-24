@@ -103,3 +103,4 @@ void app_main(void)
 */
 
     
+//bruh, meni je onaj stari projekt s blinkanjem LED-ice ubacio u repo gdje treba ic projekt s ovim LED zaslonom od 10 ledica...
